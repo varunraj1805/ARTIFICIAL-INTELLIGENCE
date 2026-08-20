@@ -1,153 +1,506 @@
-# Resume Analyzer
+# 📄 Resume Analyzer
 
-A lightweight desktop application that reviews resumes and compares them with target job roles. It can analyze a resume with a full job description, a simple role title, or no job description at all.
+> **A lightweight desktop AI-inspired resume analysis tool that evaluates resumes against target job roles and provides actionable improvement recommendations.**
 
-The application uses a Tkinter interface and performs local, rule-based analysis. No API key is required.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python" alt="Python">
+  <img src="https://img.shields.io/badge/GUI-Tkinter-orange?style=for-the-badge" alt="Tkinter">
+  <img src="https://img.shields.io/badge/Analysis-Rule--Based-green?style=for-the-badge" alt="Rule Based">
+  <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=for-the-badge" alt="Platform">
+</p>
 
-## Features
+---
 
-- Open resumes in TXT, Markdown, PDF, or DOCX format
-- Paste resume text directly into the application
-- Compare a resume with a complete job description
-- Analyze simple roles such as `Software Engineer` automatically
-- Suggest suitable roles when no job description is provided
-- Display an overall score out of 100
-- Show matched skills and skills to consider
-- Check resume sections such as summary, experience, education, skills, and projects
-- Detect measurable achievements and provide improvement recommendations
+## 🚀 Overview
 
-## Requirements
+**Resume Analyzer** is a lightweight desktop application designed to help users understand how well their resume matches a desired job role.
 
-- Python 3.10 or newer
-- Windows, macOS, or Linux
-- Tkinter, normally included with the standard Python installation
+The application can analyze a resume using:
 
-## Installation
+* 🎯 A complete **Job Description**
+* 💼 A simple **Job Role**
+* 🔍 **No job description**, using the resume itself to suggest suitable roles
 
-Clone the repository and open the project folder:
+The analyzer performs **local, rule-based analysis**, so **no API key or internet connection is required** for the core analysis.
+
+---
+
+## ✨ Features
+
+| Feature                         | Description                                                  |
+| ------------------------------- | ------------------------------------------------------------ |
+| 📂 **Multiple File Formats**    | Open TXT, Markdown, PDF, and DOCX resumes                    |
+| 📝 **Direct Text Input**        | Paste resume content directly into the application           |
+| 🎯 **Job Description Matching** | Compare a resume against a complete job description          |
+| 💼 **Role Analysis**            | Analyze roles such as Software Engineer or AI Engineer       |
+| 🤖 **Role Suggestions**         | Recommend suitable roles when no job description is provided |
+| 📊 **Resume Score**             | Generate an overall score out of 100                         |
+| ✅ **Skill Matching**            | Display skills detected in the resume                        |
+| ⚠️ **Missing Skills**           | Identify skills that may need to be added                    |
+| 📑 **Section Analysis**         | Check Summary, Experience, Education, Skills, and Projects   |
+| 📈 **Achievement Detection**    | Detect measurable achievements and evidence                  |
+| 💡 **Recommendations**          | Provide suggestions to improve the resume                    |
+
+---
+
+## 🧠 How It Works
+
+```text
+                📄 RESUME
+                    │
+                    ▼
+          ┌─────────────────────┐
+          │   Text Extraction   │
+          └──────────┬──────────┘
+                     │
+                     ▼
+          ┌─────────────────────┐
+          │ Skill Identification│
+          └──────────┬──────────┘
+                     │
+          ┌──────────┴──────────┐
+          ▼                     ▼
+   🎯 Job Description      💼 Job Role
+          │                     │
+          └──────────┬──────────┘
+                     ▼
+          ┌─────────────────────┐
+          │ Resume Comparison   │
+          └──────────┬──────────┘
+                     ▼
+          ┌─────────────────────┐
+          │    📊 Score /100    │
+          └──────────┬──────────┘
+                     ▼
+       ┌───────────────────────────┐
+       │ Skills • Roles • Sections │
+       │ Achievements • Suggestions│
+       └───────────────────────────┘
+```
+
+---
+
+## 🛠️ Technologies Used
+
+### 💻 Core
+
+* 🐍 **Python 3.10+**
+* 🖥️ **Tkinter**
+* 📄 **PyPDF**
+* 📑 **python-docx**
+
+### 🧠 Analysis
+
+* Rule-based text analysis
+* Skill matching
+* Role-profile matching
+* Resume section detection
+* Achievement detection
+
+---
+
+## 📋 Requirements
+
+Before running the project, make sure you have:
+
+* 🐍 Python **3.10 or newer**
+* 💻 Windows, macOS, or Linux
+* 🖼️ Tkinter
+
+> 💡 Tkinter is normally included with the standard Python installation.
+
+---
+
+## ⚙️ Installation
+
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
 cd YOUR-REPOSITORY
 ```
 
-Create and activate a virtual environment.
+### 2️⃣ Create a Virtual Environment
 
-### Windows PowerShell
+#### 🪟 Windows PowerShell
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-### macOS or Linux
+#### 🍎 macOS / 🐧 Linux
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-Install the optional document readers:
+### 3️⃣ Install Dependencies
 
 ```bash
 python -m pip install pypdf python-docx
 ```
 
-## Run the Application
+---
 
-From the project directory, run:
+## ▶️ Run the Application
+
+Run the following command from the project directory:
 
 ```bash
 python artifical_intelligence.py
 ```
 
-The main file is named `artifical_intelligence.py` to match the current project. The spelling is retained for compatibility.
+> ⚠️ The filename `artifical_intelligence.py` intentionally retains its current spelling for compatibility with the existing project.
 
-## How to Use
+---
 
-1. Open the application.
-2. Paste your resume or click **Open file**.
-3. Select a TXT, Markdown, PDF, or DOCX resume.
-4. Optionally enter a complete job description or a simple role such as `Software Engineer`.
-5. Click **Analyze resume**.
-6. Review the score, matched skills, missing skills, best-fit roles, and recommendations.
+## 🖥️ How to Use
 
-### Analysis Modes
+### Step 1 — 📄 Add Your Resume
 
-#### With a full job description
+Open the application and either:
 
-The analyzer extracts recognized skills from the job description and compares them with the resume.
+* 📂 Click **Open File**
+* 📝 Paste your resume text directly
 
-#### With a simple job role
-
-Built-in role profiles expand titles such as:
-
-- Software Engineer
-- Software Developer
-- Web Developer
-- Python Developer
-- Data Scientist
-- Machine Learning Engineer
-- AI Engineer
-- Frontend Developer
-- Backend Developer
-
-#### Without a job description
-
-The analyzer reviews the resume and recommends the strongest matching roles based on detected skills.
-
-## Supported Skills
-
-The built-in vocabulary includes programming, web development, cloud, data, AI, design, and workplace skills such as:
-
-- Python, Java, JavaScript, TypeScript, C++
-- SQL, HTML, CSS, React, Node.js
-- Django, Flask, FastAPI, REST APIs
-- AWS, Azure, Docker, Kubernetes
-- Git, GitHub, Linux
-- Machine Learning, Deep Learning, NLP
-- Data Analysis, Data Science, Excel, Tableau, Power BI
-- Agile, Scrum, Communication, Leadership, Research
-
-The skill vocabulary and role profiles can be expanded in `artifical_intelligence.py`.
-
-## Project Structure
+Supported formats:
 
 ```text
-.
-├── artifical_intelligence.py   # Resume analyzer desktop application
-├── speech to text.py            # Microphone speech-to-text utility
-├── style_transfer_utils.py     # Existing utility module
-├── meeting_notes/               # Existing meeting note files
-└── saved audio/                 # Existing saved audio files
+TXT
+Markdown
+PDF
+DOCX
 ```
 
-## Limitations
+### Step 2 — 🎯 Enter a Target
 
-- Analysis is rule-based and is not a substitute for a recruiter or professional career advisor.
-- Only skills in the built-in vocabulary are matched automatically.
-- Scanned or image-only PDFs may not contain extractable text.
-- The application does not currently use semantic AI or a language model.
-- A complete job description gives more accurate results than a job title alone.
+You can provide:
 
-## Contributing
+**Option A — Full Job Description**
 
-1. Create a new branch:
+Paste the complete job description.
+
+**Option B — Job Role**
+
+Enter a role such as:
+
+```text
+Software Engineer
+```
+
+**Option C — No Job Description**
+
+Leave the job description field empty and let the application recommend suitable roles.
+
+### Step 3 — 🔍 Analyze
+
+Click:
+
+```text
+Analyze Resume
+```
+
+### Step 4 — 📊 Review Results
+
+The application displays:
+
+* ⭐ Overall Resume Score
+* ✅ Matched Skills
+* ⚠️ Skills to Consider
+* 💼 Best-Fit Roles
+* 📑 Resume Section Analysis
+* 📈 Measurable Achievement Detection
+* 💡 Improvement Recommendations
+
+---
+
+# 🎯 Analysis Modes
+
+## 1. 📋 Full Job Description
+
+When a complete job description is provided, the analyzer extracts recognized skills from the description and compares them against the resume.
+
+```text
+Resume
+   +
+Job Description
+   ↓
+Skill Extraction
+   ↓
+Skill Comparison
+   ↓
+📊 Resume Score
+```
+
+---
+
+## 2. 💼 Simple Job Role
+
+The application supports built-in role profiles that expand simple job titles into relevant skills.
+
+### Supported Roles
+
+* 👨‍💻 Software Engineer
+* 💻 Software Developer
+* 🌐 Web Developer
+* 🐍 Python Developer
+* 📊 Data Scientist
+* 🤖 Machine Learning Engineer
+* 🧠 AI Engineer
+* 🎨 Frontend Developer
+* ⚙️ Backend Developer
+
+Example:
+
+```text
+Input:
+Machine Learning Engineer
+
+        ↓
+
+Role Profile
+
+Python
+Machine Learning
+Deep Learning
+NLP
+Data Analysis
+        ↓
+
+Resume Comparison
+```
+
+---
+
+## 3. 🔎 No Job Description
+
+If no job description is provided, the application analyzes the resume and identifies the strongest matching roles based on detected skills.
+
+Example:
+
+```text
+Resume Skills
+     ↓
+Python
+Machine Learning
+NLP
+Data Analysis
+     ↓
+Role Matching
+     ↓
+🎯 Recommended Roles
+```
+
+---
+
+# 🧰 Supported Skills
+
+The built-in skill vocabulary covers several technical and professional categories.
+
+### 🐍 Programming
+
+* Python
+* Java
+* JavaScript
+* TypeScript
+* C++
+
+### 🌐 Web Development
+
+* HTML
+* CSS
+* React
+* Node.js
+* Django
+* Flask
+* FastAPI
+* REST APIs
+
+### ☁️ Cloud & DevOps
+
+* AWS
+* Azure
+* Docker
+* Kubernetes
+
+### 📊 Data & Analytics
+
+* SQL
+* Data Analysis
+* Data Science
+* Excel
+* Tableau
+* Power BI
+
+### 🤖 Artificial Intelligence
+
+* Machine Learning
+* Deep Learning
+* NLP
+
+### 🔧 Tools & Platforms
+
+* Git
+* GitHub
+* Linux
+
+### 🤝 Professional Skills
+
+* Agile
+* Scrum
+* Communication
+* Leadership
+* Research
+
+> 💡 The skill vocabulary and role profiles can be expanded directly in `artifical_intelligence.py`.
+
+---
+
+# 📁 Project Structure
+
+```text
+Resume-Analyzer/
+│
+├── 📄 artifical_intelligence.py
+│   └── Main Resume Analyzer application
+│
+├── 🎤 speech to text.py
+│   └── Microphone speech-to-text utility
+│
+├── 🎨 style_transfer_utils.py
+│   └── Existing utility module
+│
+├── 📂 meeting_notes/
+│   └── Existing meeting note files
+│
+└── 🔊 saved audio/
+    └── Existing saved audio files
+```
+
+---
+
+# 📊 What the Analyzer Checks
+
+The application evaluates several important aspects of a resume.
+
+### 📑 Resume Sections
+
+* ✅ Professional Summary
+* ✅ Experience
+* ✅ Education
+* ✅ Skills
+* ✅ Projects
+
+### 🧠 Content Analysis
+
+* 🔍 Skill detection
+* 🎯 Job-role matching
+* 📊 Overall score
+* 📈 Measurable achievements
+* ⚠️ Missing skills
+* 💡 Improvement recommendations
+
+---
+
+# ⚠️ Limitations
+
+Although the project provides useful automated feedback, there are some limitations:
+
+* 🔹 Analysis is **rule-based** and is not a replacement for a recruiter or professional career advisor.
+* 🔹 Only skills included in the built-in vocabulary are automatically matched.
+* 🔹 Scanned or image-only PDFs may not contain extractable text.
+* 🔹 The current version does **not use semantic AI or a language model**.
+* 🔹 A complete job description generally provides more accurate matching than a job title alone.
+
+---
+
+# 🔮 Future Improvements
+
+Possible future enhancements include:
+
+* 🤖 Integrate an LLM for semantic resume analysis
+* 🧠 Add semantic similarity using embeddings
+* 📊 Add visual charts for resume scoring
+* 📄 Generate an improved resume automatically
+* 🎯 Add ATS compatibility scoring
+* 🌐 Build a web version
+* 🔗 Add LinkedIn profile analysis
+* 🎤 Add voice-based resume editing
+* 📈 Track resume improvements over time
+* 💾 Export analysis reports as PDF
+* 🧑‍💼 Add industry-specific resume recommendations
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+### 1️⃣ Create a Branch
 
 ```bash
 git checkout -b improve-resume-analyzer
 ```
 
-2. Make and test your changes.
-3. Commit your changes:
+### 2️⃣ Make Your Changes
+
+Implement and test your improvements.
+
+### 3️⃣ Commit
 
 ```bash
 git add .
 git commit -m "Improve resume analyzer"
 ```
 
-4. Push the branch and open a pull request on GitHub.
+### 4️⃣ Push
 
-## License
+```bash
+git push origin improve-resume-analyzer
+```
 
-Add a license before publishing if this project will be shared publicly. The MIT License is a common choice for small personal projects.
+Then open a **Pull Request** on GitHub.
+
+---
+
+# 📜 License
+
+A license should be added before publishing the project publicly.
+
+The **MIT License** is a common choice for small personal and academic projects.
+
+---
+
+# 👨‍💻 Author
+
+**Varun Raj Nannam**
+
+🎓 B.Tech — Artificial Intelligence & Machine Learning
+
+💡 Interested in:
+
+`Artificial Intelligence` • `Machine Learning` • `NLP` • `Python` • `Software Development`
+
+---
+
+# ⭐ Support
+
+If you find this project useful:
+
+⭐ **Star the repository**
+
+🍴 **Fork the project**
+
+🐛 **Report issues**
+
+💡 **Suggest improvements**
+
+🤝 **Contribute to the project**
+
+---
+
+<p align="center">
+  <b>🚀 Resume Analyzer — Analyze Better. Improve Smarter. Get Hired.</b>
+</p>
