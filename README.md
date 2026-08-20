@@ -1,95 +1,153 @@
-# ARTIFICIAL-INTELLIGENCE
-## AI Meeting Assistant
+# Resume Analyzer
 
-An AI-powered meeting assistant that records voice input, converts speech to text, summarizes meetings, extracts action items, and automatically creates a to-do list from spoken conversations. The assistant helps users stay organized by transforming meeting discussions into structured tasks with deadlines and priorities.
+A lightweight desktop application that reviews resumes and compares them with target job roles. It can analyze a resume with a full job description, a simple role title, or no job description at all.
+
+The application uses a Tkinter interface and performs local, rule-based analysis. No API key is required.
 
 ## Features
 
-* Voice recording during meetings
-* Speech-to-text transcription
-* AI-generated meeting summaries
-* Automatic extraction of action items
-* Voice-based to-do list creation
-* Priority detection (High / Medium / Low)
-* Due date recognition from speech
-* Task completion tracking
-* Export notes and tasks
-* Simple and user-friendly interface
+- Open resumes in TXT, Markdown, PDF, or DOCX format
+- Paste resume text directly into the application
+- Compare a resume with a complete job description
+- Analyze simple roles such as `Software Engineer` automatically
+- Suggest suitable roles when no job description is provided
+- Display an overall score out of 100
+- Show matched skills and skills to consider
+- Check resume sections such as summary, experience, education, skills, and projects
+- Detect measurable achievements and provide improvement recommendations
 
-## How it works
+## Requirements
 
-1. Start recording the meeting.
-2. The assistant captures voice input.
-3. Speech is converted into text using speech recognition.
-4. AI analyzes the transcript.
-5. Important decisions and action items are extracted.
-6. A structured to-do list is automatically generated.
-
-### Example
-
-**Voice input**
-
-“Call the client tomorrow morning, finish the AI presentation by Friday, and send the project report to the professor.”
-
-**Generated to-do list**
-
-* Call the client — Tomorrow morning
-* Finish the AI presentation — Friday
-* Send the project report to the professor — Pending
-
-## Technologies used
-
-* Python
-* SpeechRecognition
-* OpenAI / NLP
-* Tkinter or Streamlit
-* PyAudio
-* Transformers (optional)
-* SQLite or JSON
-
-## Project structure
-
-ai-meeting-assistant/
-
-* app.py
-* speech_to_text.py
-* summarizer.py
-* todo_extractor.py
-* tasks.json
-* requirements.txt
-* README.md
+- Python 3.10 or newer
+- Windows, macOS, or Linux
+- Tkinter, normally included with the standard Python installation
 
 ## Installation
 
-Install dependencies:
+Clone the repository and open the project folder:
 
-pip install -r requirements.txt
+```bash
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+cd YOUR-REPOSITORY
+```
 
-Run the application:
+Create and activate a virtual environment.
 
-python app.py
+### Windows PowerShell
 
-## Future enhancements
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
 
-* Speaker identification
-* Calendar integration
-* Email reminders
-* Multi-language support
-* Cloud synchronization
-* Mobile application support
+### macOS or Linux
 
-## Applications
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
 
-* Business meetings
-* College project discussions
-* Team stand-ups
-* Online classes
-* Personal productivity
+Install the optional document readers:
 
-## Sample workflow
+```bash
+python -m pip install pypdf python-docx
+```
 
-Record voice → Speech-to-text → AI summary → Task extraction → To-do list generation
+## Run the Application
 
-## Conclusion
+From the project directory, run:
 
-AI Meeting Assistant reduces manual note-taking by automatically summarizing meetings and converting spoken action items into an organized to-do list. It improves productivity, ensures important tasks are not missed, and provides a smart voice-driven meeting management solution.
+```bash
+python artifical_intelligence.py
+```
+
+The main file is named `artifical_intelligence.py` to match the current project. The spelling is retained for compatibility.
+
+## How to Use
+
+1. Open the application.
+2. Paste your resume or click **Open file**.
+3. Select a TXT, Markdown, PDF, or DOCX resume.
+4. Optionally enter a complete job description or a simple role such as `Software Engineer`.
+5. Click **Analyze resume**.
+6. Review the score, matched skills, missing skills, best-fit roles, and recommendations.
+
+### Analysis Modes
+
+#### With a full job description
+
+The analyzer extracts recognized skills from the job description and compares them with the resume.
+
+#### With a simple job role
+
+Built-in role profiles expand titles such as:
+
+- Software Engineer
+- Software Developer
+- Web Developer
+- Python Developer
+- Data Scientist
+- Machine Learning Engineer
+- AI Engineer
+- Frontend Developer
+- Backend Developer
+
+#### Without a job description
+
+The analyzer reviews the resume and recommends the strongest matching roles based on detected skills.
+
+## Supported Skills
+
+The built-in vocabulary includes programming, web development, cloud, data, AI, design, and workplace skills such as:
+
+- Python, Java, JavaScript, TypeScript, C++
+- SQL, HTML, CSS, React, Node.js
+- Django, Flask, FastAPI, REST APIs
+- AWS, Azure, Docker, Kubernetes
+- Git, GitHub, Linux
+- Machine Learning, Deep Learning, NLP
+- Data Analysis, Data Science, Excel, Tableau, Power BI
+- Agile, Scrum, Communication, Leadership, Research
+
+The skill vocabulary and role profiles can be expanded in `artifical_intelligence.py`.
+
+## Project Structure
+
+```text
+.
+├── artifical_intelligence.py   # Resume analyzer desktop application
+├── speech to text.py            # Microphone speech-to-text utility
+├── style_transfer_utils.py     # Existing utility module
+├── meeting_notes/               # Existing meeting note files
+└── saved audio/                 # Existing saved audio files
+```
+
+## Limitations
+
+- Analysis is rule-based and is not a substitute for a recruiter or professional career advisor.
+- Only skills in the built-in vocabulary are matched automatically.
+- Scanned or image-only PDFs may not contain extractable text.
+- The application does not currently use semantic AI or a language model.
+- A complete job description gives more accurate results than a job title alone.
+
+## Contributing
+
+1. Create a new branch:
+
+```bash
+git checkout -b improve-resume-analyzer
+```
+
+2. Make and test your changes.
+3. Commit your changes:
+
+```bash
+git add .
+git commit -m "Improve resume analyzer"
+```
+
+4. Push the branch and open a pull request on GitHub.
+
+## License
+
+Add a license before publishing if this project will be shared publicly. The MIT License is a common choice for small personal projects.
